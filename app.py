@@ -1,3 +1,4 @@
+import base64
 from pathlib import Path
 
 import streamlit as st
@@ -13,9 +14,27 @@ def load_theme():
     st.markdown(f"<style>{css_path.read_text()}</style>", unsafe_allow_html=True)
 
 
+def render_header():
+    logo_path = Path(__file__).with_name("assets") / "logo.png"
+
+    if not logo_path.exists():
+        st.title("Invoice Watch")
+        return
+
+    encoded_logo = base64.b64encode(logo_path.read_bytes()).decode("utf-8")
+    st.markdown(
+        f"""
+        <div class="app-logo-wrap">
+            <img class="app-logo" src="data:image/png;base64,{encoded_logo}" alt="Invoice Watch logo">
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 load_theme()
 
-st.title("Invoice Watch")
+render_header()
 
 selected_option = st.selectbox(
     "Options",

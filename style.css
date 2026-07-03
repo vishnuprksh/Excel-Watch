@@ -42,6 +42,22 @@ h1 {
     font-weight: 700;
 }
 
+.app-logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px;
+}
+
+.app-logo {
+    display: block;
+    max-width: 360px;
+    max-height: 180px;
+    width: auto;
+    height: auto;
+    object-fit: fill;
+}
+
 [data-testid="stFileUploader"],
 [data-testid="stDataFrame"],
 [data-testid="stMultiSelect"],
