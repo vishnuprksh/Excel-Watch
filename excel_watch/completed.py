@@ -154,6 +154,28 @@ def render_date_calendar(df, key):
 
     selected_dates = set(st.session_state[selected_key])
 
+    if selected_dates:
+        highlight_rules = "\n".join(
+            f"""
+            div.st-key-{key}_{date.year}_{date.month}_{date.day} button {{
+                background: var(--green) !important;
+                color: var(--navy) !important;
+                border: 3px solid var(--navy) !important;
+                font-weight: 800;
+                box-shadow: 0 0 0 3px var(--green-soft), 0 0 12px 2px var(--green) !important;
+                transform: scale(1.08);
+            }}
+            div.st-key-{key}_{date.year}_{date.month}_{date.day} button:hover {{
+                background: var(--navy) !important;
+                color: var(--white) !important;
+                border: 3px solid var(--green) !important;
+                box-shadow: 0 0 0 3px var(--green-soft), 0 0 12px 2px var(--green) !important;
+            }}
+            """
+            for date in st.session_state[selected_key]
+        )
+        st.markdown(f"<style>{highlight_rules}</style>", unsafe_allow_html=True)
+
     for week in calendar.monthcalendar(year, month_number):
         columns = st.columns(7)
         for day_index, day in enumerate(week):
