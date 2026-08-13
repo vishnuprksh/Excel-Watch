@@ -19,11 +19,11 @@ EXPECTED_COLUMNS = {
     "Sub Customer": ["SubCustomer", "Sub Customer"],
     "Invoice #": ["Invoice #"],
     "Invoice Date": ["Invoice Date"],
-    "Type": ["Type"],
-    "Subscription": ["Subscription"],
-    "Total": ["Total"],
-    "Created": ["Created"],
-    "Sent": ["Sent"],
+    "Type": ["Type", "Invoice Type"],
+    "Subscription": ["Subscription", "Subscription Type"],
+    "Total": ["Total", "Total USD"],
+    "Created": ["Created", "CreatedBy"],
+    "Sent": ["Sent", "MarkedAsSentBy"],
 }
 
 OUTPUT_COLUMNS = [

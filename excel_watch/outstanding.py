@@ -7,7 +7,7 @@ from excel_watch.common import dataframe_to_csv, find_columns, read_input_file, 
 REQUIRED_COLUMNS = {
     "Customer": ["Customer"],
     "Invoice Date": ["Invoice Date"],
-    "Total": ["Total"],
+    "Total": ["Total", "Total USD"],
 }
 
 

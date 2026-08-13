@@ -1,0 +1,4 @@
+[server]
+# Keep every launch on one fixed port. If the app is already running, a second
+# `streamlit run` command fails instead of silently starting another server.
+port = 8501
