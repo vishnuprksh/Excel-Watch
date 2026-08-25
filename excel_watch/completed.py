@@ -17,7 +17,7 @@ from excel_watch.common import (
 EXPECTED_COLUMNS = {
     "Customer": ["Customer"],
     "Sub Customer": ["SubCustomer", "Sub Customer"],
-    "Invoice #": ["Invoice #", "Invoice No", "Invoice Number"],
+    "Invoice #": ["Invoice #", "Invoice No", "Invoice No.", "Invoice Number"],
     "Invoice Date": ["Invoice Date"],
     "Type": ["Type", "Invoice Type"],
     "Subscription": ["Subscription", "Subscription Type"],

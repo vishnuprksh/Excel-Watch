@@ -8,6 +8,26 @@ from excel_watch.common import find_columns
 
 
 class CompletedColumnAliasesTest(unittest.TestCase):
+    def test_invoice_number_aliases_are_recognized(self):
+        input_data = pd.DataFrame(
+            {
+                "Invoice No.": ["INV-1"],
+                "Invoice Type": ["Standard"],
+                "Subscription Type": ["Annual"],
+                "Total USD": [125.0],
+                "CreatedBy": ["User • Alice"],
+                "MarkedAsSentBy": ["User • Bob"],
+            }
+        )
+
+        found_columns, missing_columns = find_columns(
+            input_data,
+            completed.EXPECTED_COLUMNS,
+        )
+
+        self.assertEqual(found_columns["Invoice #"], "Invoice No.")
+        self.assertEqual(missing_columns, ["Customer", "Sub Customer", "Invoice Date"])
+
     def test_old_and_new_column_names_prepare_identical_data(self):
         old_input = pd.DataFrame(
             {
