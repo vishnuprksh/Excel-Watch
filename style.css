@@ -6,13 +6,11 @@
     --green-soft: #eaf6d5;
     --panel: #e8ecff;
     --white: #fcfcfc;
+    --background: var(--panel);
 }
 
 .stApp {
-    background:
-        linear-gradient(rgba(7, 20, 71, 0.78), rgba(7, 20, 71, 0.86)),
-        radial-gradient(circle at top left, #1e3a72 0, transparent 34%),
-        linear-gradient(135deg, #071447 0%, #101c36 55%, #0b1f3a 100%);
+    background: var(--background);
     color: var(--navy);
     font-family: "Segoe UI", Arial, sans-serif;
 }
@@ -22,9 +20,8 @@
     margin-top: 32px;
     margin-bottom: 32px;
     padding: 28px 30px 34px;
-    background: var(--panel);
+    background: var(--background);
     border-radius: 12px;
-    box-shadow: 0 2px 16px #07144766;
 }
 
 h1,
